@@ -1,3 +1,18 @@
+linux (4.15.0-23.25+glktesting1) bionic; urgency=medium
+
+  * Geminilake testing: selectable workaround for the i915 HDMI issue:
+    - i915.glkhdmi=0 (default/upstream behaviour, will cause broken
+      output on res change when the pixel clock goes up)
+    - i915.glkhdmi=1 (effectively disable 12bps support, ie. use
+      "return false;" at the top of intel_hdmi.c:hdmi_12bpc_possible())
+    - i915.glkhdmi=2 (insert short delay after disabling the transcoder
+      to give the level shifter some time to settle)
+
+    Refer to https://bugs.freedesktop.org/show_bug.cgi?id=105887 for
+    more details regarding the GLK HDMI issue.
+
+ -- Daniel Scheller <d.scheller@gmx.net>  Fri, 18 May 2018 21:13:08 +0200
+
 linux (4.15.0-23.25) bionic; urgency=medium
 
   * linux: 4.15.0-23.25 -proposed tracker (LP: #1772927)
