@@ -1,3 +1,9 @@
+linux (4.15.0-21.22+glktesting1) bionic; urgency=medium
+
+  * Geminilake testing: effectively disable hdmi_12bpc_possible()
+
+ -- Daniel Scheller <d.scheller@gmx.net>  Fri, 18 May 2018 21:13:08 +0200
+
 linux (4.15.0-21.22) bionic; urgency=medium
 
   * linux: 4.15.0-21.22 -proposed tracker (LP: #1767397)
