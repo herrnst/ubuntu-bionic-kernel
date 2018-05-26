@@ -1648,6 +1648,9 @@ void intel_ddi_disable_transcoder_func(struct drm_i915_private *dev_priv,
 	val &= ~(TRANS_DDI_FUNC_ENABLE | TRANS_DDI_PORT_MASK | TRANS_DDI_DP_VC_PAYLOAD_ALLOC);
 	val |= TRANS_DDI_PORT_NONE;
 	I915_WRITE(reg, val);
+
+	if (i915_modparams.glkhdmi == 2)
+		msleep(50);
 }
 
 bool intel_ddi_connector_get_hw_state(struct intel_connector *intel_connector)
