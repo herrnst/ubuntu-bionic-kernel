@@ -194,4 +194,5 @@ i915_param_named(enable_gvt, bool, 0400,
 i915_param_named_unsafe(glkhdmi, int, 0400,
 	"Enable GLK HDMI workarounds "
 	"(0=none/default, "
-	"1=disable HDMI 12bpc)");
+	"1=disable HDMI 12bpc, "
+	"2=delay after transcoder disable)");
