@@ -1639,6 +1639,9 @@ void intel_ddi_enable_transcoder_func(const struct intel_crtc_state *crtc_state)
 	I915_WRITE(TRANS_DDI_FUNC_CTL(cpu_transcoder), temp);
 }
 
+/* Quirk time computed based on 24fps frame time of 41.25ms */
+#define DDI_DISABLED_QUIRK_TIME 42
+
 void intel_ddi_disable_transcoder_func(struct drm_i915_private *dev_priv,
 				       enum transcoder cpu_transcoder)
 {
@@ -1648,6 +1651,11 @@ void intel_ddi_disable_transcoder_func(struct drm_i915_private *dev_priv,
 	val &= ~(TRANS_DDI_FUNC_ENABLE | TRANS_DDI_PORT_MASK | TRANS_DDI_DP_VC_PAYLOAD_ALLOC);
 	val |= TRANS_DDI_PORT_NONE;
 	I915_WRITE(reg, val);
+
+	if (dev_priv->quirks & QUIRK_INCREASE_DDI_DISABLED_TIME) {
+		msleep(DDI_DISABLED_QUIRK_TIME);
+		DRM_DEBUG_KMS("Quirk Increase DDI disabled time\n");
+	}
 }
 
 bool intel_ddi_connector_get_hw_state(struct intel_connector *intel_connector)
