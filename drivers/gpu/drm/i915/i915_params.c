@@ -190,9 +190,3 @@ i915_param_named(enable_dpcd_backlight, bool, 0600,
 
 i915_param_named(enable_gvt, bool, 0400,
 	"Enable support for Intel GVT-g graphics virtualization host support(default:false)");
-
-i915_param_named_unsafe(glkhdmi, int, 0400,
-	"Enable GLK HDMI workarounds "
-	"(0=none/default, "
-	"1=disable HDMI 12bpc, "
-	"2=delay after transcoder disable)");

@@ -1339,9 +1339,6 @@ static bool hdmi_12bpc_possible(const struct intel_crtc_state *crtc_state)
 	struct drm_connector *connector;
 	int i;
 
-	if (i915_modparams.glkhdmi == 1)
-		return false;
-
 	if (HAS_GMCH_DISPLAY(dev_priv))
 		return false;
 
