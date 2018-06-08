@@ -1,3 +1,13 @@
+linux (4.15.0-23.25+glktesting2) bionic; urgency=medium
+
+  * Geminilake testing: all previous testing quirks removed in favor of
+    https://patchwork.freedesktop.org/series/44446/ by Clint Taylor.
+
+    Refer to https://bugs.freedesktop.org/show_bug.cgi?id=105887 for
+    more details regarding the GLK HDMI issue.
+
+ -- Daniel Scheller <d.scheller@gmx.net>  Fri,  8 Jun 2018 20:14:34 +0200
+
 linux (4.15.0-23.25+glktesting1) bionic; urgency=medium
 
   * Geminilake testing: selectable workaround for the i915 HDMI issue:
