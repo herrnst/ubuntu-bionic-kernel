@@ -14349,8 +14349,11 @@ static struct intel_quirk intel_quirks[] = {
 	/* Toshiba Satellite P50-C-18C */
 	{ 0x191B, 0x1179, 0xF840, quirk_increase_t12_delay },
 
-	/* GeminiLake NUC */
+	/* GeminiLake NUC & ASRock Celeron/Pentium silver boards */
 	{ 0x3185, 0x8086, 0x2072, quirk_increase_ddi_disabled_time },
+	{ 0x3184, 0x1849, 0x2212, quirk_increase_ddi_disabled_time },
+	{ 0x3185, 0x1849, 0x2212, quirk_increase_ddi_disabled_time },
+	{ 0x3184, 0x8086, 0x2072, quirk_increase_ddi_disabled_time },
 };
 
 static void intel_init_quirks(struct drm_device *dev)

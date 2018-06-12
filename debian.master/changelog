@@ -1,3 +1,13 @@
+linux (4.15.0-23.25+glktesting3) bionic; urgency=medium
+
+  * Additional hardware IDs for the DDI delay quirks as suggested by
+    Clinton Taylor.
+
+    Refer to https://bugs.freedesktop.org/show_bug.cgi?id=105887 for
+    more details regarding the GLK HDMI issue.
+
+ -- Daniel Scheller <d.scheller@gmx.net>  Tue, 12 Jun 2018 18:37:44 +0200
+
 linux (4.15.0-23.25+glktesting2) bionic; urgency=medium
 
   * Geminilake testing: all previous testing quirks removed in favor of
