@@ -1,3 +1,13 @@
+linux (4.15.0-24.26+glktesting4) bionic; urgency=medium
+
+  * Version 3 of the GLK HDMI quirk patch as of
+    https://patchwork.freedesktop.org/patch/233505/
+
+    Refer to https://bugs.freedesktop.org/show_bug.cgi?id=105887 for
+    more details regarding the GLK HDMI issue.
+
+-- Daniel Scheller <d.scheller@gmx.net> Fri, 29 Jun 2018 18:52:26 +0200
+
 linux (4.15.0-24.26) bionic; urgency=medium
 
   * linux: 4.15.0-24.26 -proposed tracker (LP: #1776338)
