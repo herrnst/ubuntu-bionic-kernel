@@ -1,3 +1,12 @@
+linux (4.15.0-24.26+glktesting6) bionic; urgency=medium
+
+  * Check for INTEL_OUTPUT_UNKNOWN as well
+
+    Refer to https://bugs.freedesktop.org/show_bug.cgi?id=105887 for
+    more details regarding the GLK HDMI issue.
+
+-- Daniel Scheller <d.scheller@gmx.net> Sat, 30 Jun 2018 13:07:35 +0200
+
 linux (4.15.0-24.26+glktesting5) bionic; urgency=medium
 
   * Apply futher connector checking as asked by Clinton Taylor in
