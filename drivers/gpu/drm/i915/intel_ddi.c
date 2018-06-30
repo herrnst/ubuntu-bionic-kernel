@@ -1647,7 +1647,6 @@ void intel_ddi_disable_transcoder_func(const struct intel_crtc_state *crtc_state
 	struct intel_crtc *crtc = to_intel_crtc(crtc_state->base.crtc);
 	struct drm_i915_private *dev_priv = to_i915(crtc->base.dev);
 	enum transcoder cpu_transcoder = crtc_state->cpu_transcoder;
-
 	i915_reg_t reg = TRANS_DDI_FUNC_CTL(cpu_transcoder);
 	uint32_t val = I915_READ(reg);
 
@@ -1655,10 +1654,12 @@ void intel_ddi_disable_transcoder_func(const struct intel_crtc_state *crtc_state
 	val |= TRANS_DDI_PORT_NONE;
 	I915_WRITE(reg, val);
 
+	DRM_ERROR(" *** connector type = %d\n", crtc_state->output_types);
 	if (dev_priv->quirks & QUIRK_INCREASE_DDI_DISABLED_TIME &&
-	    intel_crtc_has_type(crtc_state, INTEL_OUTPUT_HDMI)) {
-		msleep(DDI_DISABLED_QUIRK_TIME);
+	    (intel_crtc_has_type(crtc_state, INTEL_OUTPUT_HDMI) ||
+	     intel_crtc_has_type(crtc_state, INTEL_OUTPUT_UNUSED))) {
 		DRM_DEBUG_KMS("Quirk Increase DDI disabled time\n");
+		msleep(DDI_DISABLED_QUIRK_TIME);
 	}
 }
 
