@@ -1620,6 +1620,8 @@ void intel_ddi_disable_transcoder_func(const struct intel_crtc_state *crtc_state
 	val |= TRANS_DDI_PORT_NONE;
 	I915_WRITE(reg, val);
 
+	DRM_ERROR(" *** connector type = %d\n", crtc_state->output_types);
+
 	if (dev_priv->quirks & QUIRK_INCREASE_DDI_DISABLED_TIME &&
 	    (intel_crtc_has_type(crtc_state, INTEL_OUTPUT_HDMI) ||
 	     intel_crtc_has_type(crtc_state, INTEL_OUTPUT_DDI))) {
