@@ -1,3 +1,12 @@
+linux (4.17.4-041704.201807031235+glktesting7) cosmic; urgency=low
+
+  * Applied https://patchwork.freedesktop.org/patch/236192/ plus debug
+
+    do_zfs disabled though to not cause build problems due to missing zfs
+    sources.
+
+ -- Daniel Scheller <d.scheller@gmx.net>  Wed,  4 Jul 2018 20:19:44 +0200
+
 linux (4.17.4-041704.201807031235) cosmic; urgency=low
 
   Mainline build at commit: v4.17.4
